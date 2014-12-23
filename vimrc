@@ -2,7 +2,7 @@
 " Version: 1
 " Author: Seth Mason
 " Created: 19 Nov 2003 10:20:19
-" Last-modified: 14 Dec 2010 11:55:49 PM
+" Last-modified: 23 Dec 2014 10:25:09
 " All my Vim commands for the taking
 " Works on cygwin but not very well on unix machines...still trying to figure
 " it out
@@ -219,6 +219,18 @@ if has("autocmd")
   " Normally don't automatically format 'text' as it is typed, only do this
   " with comments, at 79 characters.
   au BufNewFile,BufEnter *.c,*.h,*.java,*.jsp set formatoptions-=t tw=79
+  au BufNewFile,BufRead *.coffee set ft=coffee et sta sts=4 sw=4 ts=4
+  au BufNewFile,BufRead *.css set ft=css noet sts=4 sw=4 ts=4
+  au BufNewFile,BufRead *.go set ft=go noet sts=4 sw=4 ts=4
+  au BufNewFile,BufRead *.html set ft=html noet sts=4 sw=4 ts=4
+  au BufNewFile,BufRead *.jade set ft=jade et sta sts=4 sw=4 ts=4
+  au BufNewFile,BufRead *.js set ft=javascript et sta sts=2 sw=2 ts=2
+  au BufNewFile,BufRead *.jsx set ft=javascript et sta sts=2 sw=2 ts=2
+  au BufNewFile,BufRead *.json set ft=javascript et sta sts=4 sw=4 ts=4
+  au BufNewFile,BufRead *.php set ft=php noet sts=4 sw=4 ts=4
+  au BufNewFile,BufRead *.py set ft=python et sta sts=4 sw=4 ts=4
+  au BufNewFile,BufRead *.sass set ft=sass et sta sts=4 sw=4 ts=4
+  au BufNewFile,BufRead *.scss set ft=sass et sta sts=4 sw=4 ts=4
 
   " add an autocommand to update an existing time stamp when writing the file 
   " It uses the functions above to replace the time stamp and restores cursor 

@@ -2,7 +2,7 @@
 " Version: 1
 " Author: Seth Mason
 " Created: 19 Nov 2003 10:20:19
-" Last-modified: 28 Dec 2014 13:18:02
+" Last-modified: 05 Jan 2015 18:27:14
 " All my Vim commands for the taking
 " Works on cygwin but not very well on unix machines...still trying to figure
 " it out
@@ -331,7 +331,14 @@ inoremap <s-tab> <c-n>
 
 " Let me know when lines go over 90 chars
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>90v.\+', -1)
-" Remove trailing whitespaces
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+au BufWinEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
+au BufWinLeave * call clearmatches()
+" Remove trailing whitespaces - would be extremely annoying
 " au BufWritePre * :%s/\s\+$//e btw
 
 

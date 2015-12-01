@@ -2,10 +2,12 @@
 " Version: 1
 " Author: Seth Mason
 " Created: 19 Nov 2003 10:20:19
-" Last-modified: 05 Jan 2015 18:27:14
+" Last-modified: 01 Dec 2015 10:46:42
 " All my Vim commands for the taking
 " Works on cygwin but not very well on unix machines...still trying to figure
 " it out
+
+execute pathogen#infect()
 
 " SVN Blame
 map gl :call SvnBlame_blameCurrentFile()
@@ -453,5 +455,3 @@ nnoremap <leader>T :call RunAllTests('')<cr>
 
 " nnoremap <leader>t :call JumpToTestsForClass()<cr>
 nnoremap <leader><leader> <c-^>
-
-

@@ -7,8 +7,6 @@
 " Works on cygwin but not very well on unix machines...still trying to figure
 " it out
 
-execute pathogen#infect()
-
 " SVN Blame
 map gl :call SvnBlame_blameCurrentFile()
 
